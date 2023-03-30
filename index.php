@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- -->
 <html>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="sandun.css"/>
@@ -20,7 +21,7 @@
                             </div>
                         </td>
                         <td align="right">
-                            <a class="login">LOGIN</a>
+                            <a href="loginregutube/login.php" class="login">LOGIN</a>
                         </td>
                     </tr>
                 </table>
@@ -30,11 +31,11 @@
                 <table align="center" width="100%">
                     <tr>
                         <td width="25%"><h2 class="Site">&nbsp;MECALA TUTORS</h2></td>
-                        <td width="10%" class="nav"><a href="Home.php" class="nav">Home</a></td>
-                        <td width="10%" class="nav"><a href="About.php" class="nav">About</a></td>
-                        <td width="10%" class="nav"><a href="Courses.php" class="nav">Courses</a></td>
-                        <td width="10%" class="nav"><a href="Staff.php" class="nav">Staff</a></td>
-                        <td width="10%" class="nav"><a href="Contact.php" class="nav">Contact</a></td>
+                        <td width="10%" class="nav"><a href="index.php" class="nav"><i class="fa fa-home"></i>&nbsp Home</a></td>
+                        <td width="10%" class="nav"><a href="About.php" class="nav"><i class="fa-solid fa-address-card"></i>&nbspAbout</a></td>
+                        <td width="10%" class="nav"><a href="Courses.php" class="nav"><i class="fa-solid fa-dungeon"></i>&nbspCourses</a></td>
+                        <td width="10%" class="nav"><a href="Staff.php" class="nav"><i class="fa-solid fa-user-graduate"></i>&nbspStaff</a></td>
+                        <td width="10%" class="nav"><a href="Contact.php" class="nav"><i class="fa-solid fa-phone"></i>&nbspContact</a></td>
                         <td width="25%" class="Search" align="right"><input type="text" name="" class="Search" placeholder="Search">&nbsp;</td>
                     </tr>
                 </table>
