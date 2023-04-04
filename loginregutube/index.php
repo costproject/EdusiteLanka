@@ -1,10 +1,372 @@
+<?php 
+include'config.php';
+?>
+
 <!DOCTYPE html>
 <!-- -->
 <html>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="sandun.css"/>
+       
+<style>
+
+h1,h2,h3,h4,h5,h6,div,p,table,body{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background-image: url(../images/body-bg.jpg);
+}
+
+.Header_Section,.welcome_section, .aboutus_section, .count_section, .teacher_section{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.profilePic{
+    float: left;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+}
+
+.propicArea{
+    vertical-align: middle;
+}
+
+td.nav{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+td.search{
+    text-align: right;
+}
+
+a.login{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;;
+    text-align: center;
+}
+
+a.login:hover{
+    background-color: orangered;
+    color: white;
+}
+
+a.nav{
+    text-decoration: none;
+    color: white;
+}
+
+a.nav:hover {
+    color:orangered;
+}
+
+.menu{
+    background-color: black;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input.Search{
+    border-radius: 10px;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    background-color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+div.welcome{
+    background-image: url(images/welcome.jpg);
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+}
+
+a.aboutLink,a.teacher{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;;
+    text-align: center;
+    border-radius: 20px;
+}
+
+a.aboutLink:hover, a.teacher:hover{
+    background-color: orangered;
+    color: white;
+}
+
+div.welcomeText{
+    text-align: center;
+    padding-right: 240px;
+}
+
+h1.welcome,h3.welcome{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+div.aboutus_section{
+    background-color: black;
+}
+
+h2.aboutus, p.aboutus{
+    color: white;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+h2.aboutus{
+    color: orangered;
+}
+
+
+table.aboutus{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+h2.count{
+    color: black;
+    text-align: center;
+}
+
+div.count{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+img.img{
+    width: 200px;
+    height:300px;
+    background-repeat: no-repeat;
+    background-position: top;
+    object-fit: cover;
+}
+
+td.img{
+    text-align: center;
+}
+
+h1.teacher{
+    text-align: center;
+}
+
+h3.teacher{
+    text-align: center;
+    color: grey;
+}
+
+h2.teacher_name{
+    text-align: center;
+}
+
+h3.teacher_name{
+    text-align: center;
+    color: grey;
+}
+
+a.teacher{
+
+}
+/*opens js and provide with 2 option*/
+#btnofloginm{
+
+    text-align: right;
+    display: block;
+  
+
+}
+#myBtnlr{
+    font-size: 16px;
+    background-color: white;
+
+  color: black;
+     width: 150px;
+    height: 50px;
+   border-radius: 5px;
+    border: none;
+    font-family:Lucida Console ;
+
+
+  
+
+}
+
+#myBtnlr:hover{
+
+background-color: #699E3C;
+
+
+
+}
+
+
+
+
+
+
+
+.roundbutton{
+    background-color:gray ;
+    border:none ;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+
+
+}
+.roundbutton:hover{
+       background-color:whitesmoke ;
+    border:none ; 
+
+}
+
+
+
+
+
+
+
+
+
+
+        .modal2{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+ 
+background: linear-gradient(45deg, rgba(48,39,24,1) 0%, rgba(199,171,89,1) 49%, rgba(222,210,168,1) 100%);
+}
+
+.modal-content2 {
+ 
+  margin: 15% auto;
+  padding: 20px;
+  
+  width: 70%;
+  height: 400px;
+
+}
+
+
+
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: gray;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.circle i {
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.3s ease;
+}
+
+.circle:hover {
+  transform: scale(1.3);
+  background-color: whitesmoke;
+}
+
+.circle:hover i {
+  transform: scale(1.1);
+
+}
+
+/*----------------------------------------------------------------*/
+.imgdata
+{
+      width: 200px;
+    height:300px;
+    
+    object-fit: cover;
+    margin: 0px auto;
+
+}
+
+
+#tablename{
+   font-weight: bold;
+   font-size: 25px;
+
+
+
+}
+#tabledescrip{
+    
+      
+
+
+}
+
+</style>
+
+
         <title>HomePage</title>
     </head>
     <body>
@@ -20,9 +382,11 @@
                                 <div>&nbsp;&nbsp;kndfjsajf@gmail.com <br> &nbsp;&nbsp;#12345</div>
                             </div>
                         </td>
-                        <td align="right">
-                            <a href="loginregutube/login.php" class="login">LOGIN</a>
-                        </td>
+                       <td  id="btnofloginm"><button id="myBtnlr">Login/Register</button>
+                        
+
+</td>
+                        
                     </tr>
                 </table>
             </div>
@@ -197,11 +561,109 @@
 
 
 
+<div class="container">
+             <table class="imagetable" border="1" align="center" width="100%">
+           <thead>
+                    
+           </thead>
+                    <tbody>
+<tr>
+  <?php
+    $query = "SELECT * FROM teach_user_form";
+    $r =mysqli_query($conn,$query);
+    while($row=mysqli_fetch_assoc($r)){
+
+        
+  ?>
+
+
+
+                <td width="200" height="300" align="center"><img src="uploaded_img/<?php echo $row['image'] ?>" class="imgdata" >
+             <p id="tablename"><?php echo $row['name'] ?></p>
+            <br/>
+         <p id="tabledescrip"> <?php echo $row['info'] ?></p></td>
+           
+
+   <?php
+         }
+
+     ?>
+ </tr>
+
+                    </tbody>
+</table>
+</div>
+
+
+
+
+<!--when login/registerd is clicked 2 option popups-->
+<div id="myModal2" class="modal2">
+  <div class="modal-content2">
+           <table border="0" width="100%" height="100%">
+            
+       <tr><td align="center">
+            <p class="circle">
+                <abbr title="student login" ><a href="login.php"><button id="studentbutton" class="roundbutton" ><i class="fa-solid fa-user fa-6x" ></i></button></a></abbr>
+            </p>
+         </td>
+        <td align="center">
+            <p class="circle">
+               <abbr title="teacher login" > <a href="teach_login.php"><button id="lecbutton" class="roundbutton" ><i class="fa-solid fa-user-graduate fa-6x"></i></button></a></abbr>
+            </p>
+        </td>
+      
+
+        </tr>
+
+
+           </table>
+     </div>
+</div>
+
+<div>
+    <div>
 
 
 
 
 
+
+
+
+
+
+
+    </div>
+</div>    
+
+
+
+<script>
+		
+    //circle
+var btn2 = document.getElementById("myBtnlr");
+var modal2 = document.getElementById("myModal2");
+        btn2.onclick = function() {
+  modal2.style.display = "block";
+                               }
+
+
+        window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+}
+
+
+
+
+
+
+//---------------------------------------------
+
+
+	</script>
 
 
 

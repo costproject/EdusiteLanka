@@ -6,10 +6,20 @@ $user_id = $_SESSION['user_id'];
 
 if(isset($_POST['update_profile'])){
 
+   $update_info= mysqli_real_escape_string($conn, $_POST['update_info']);
+
+
+
+
+
+
+
+
+
    $update_name = mysqli_real_escape_string($conn, $_POST['update_name']);
    $update_email = mysqli_real_escape_string($conn, $_POST['update_email']);
 
-   mysqli_query($conn, "UPDATE `user_form` SET name = '$update_name', email = '$update_email' WHERE id = '$user_id'") or die('query failed');
+   mysqli_query($conn, "UPDATE `teach_user_form` SET name = '$update_name', email = '$update_email' , info='$update_info' WHERE id = '$user_id'") or die('query failed');
 
    $old_pass = $_POST['old_pass'];
    $update_pass = mysqli_real_escape_string($conn, md5($_POST['update_pass']));
@@ -36,7 +46,7 @@ if(isset($_POST['update_profile'])){
       if($update_image_size > 2000000){
          $message[] = 'image is too large';
       }else{
-         $image_update_query = mysqli_query($conn, "UPDATE `user_form` SET image = '$update_image' WHERE id = '$user_id'") or die('query failed');
+         $image_update_query = mysqli_query($conn, "UPDATE `teach_user_form` SET image = '$update_image' WHERE id = '$user_id'") or die('query failed');
          if($image_update_query){
             move_uploaded_file($update_image_tmp_name, $update_image_folder);
          }
@@ -47,6 +57,7 @@ if(isset($_POST['update_profile'])){
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +76,7 @@ if(isset($_POST['update_profile'])){
 <div class="update-profile">
 
    <?php
-      $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+      $select = mysqli_query($conn, "SELECT * FROM `teach_user_form` WHERE id = '$user_id'") or die('query failed');
       if(mysqli_num_rows($select) > 0){
          $fetch = mysqli_fetch_assoc($select);
       }
@@ -90,6 +101,8 @@ if(isset($_POST['update_profile'])){
             <input type="text" name="update_name" value="<?php echo $fetch['name']; ?>" class="box">
             <span>your email :</span>
             <input type="email" name="update_email" value="<?php echo $fetch['email']; ?>" class="box">
+             <span>description :</span>
+            <input type="text" name="update_info" value="<?php echo $fetch['info']; ?>" class="box">
             <span>update your pic :</span>
             <input type="file" name="update_image" accept="image/jpg, image/jpeg, image/png" class="box">
          </div>
@@ -104,10 +117,11 @@ if(isset($_POST['update_profile'])){
          </div>
       </div>
       <input type="submit" value="update profile" name="update_profile" class="btn">
-      <a href="student_home.php" class="delete-btn">go back</a>
+      <a href="teach_home.php" class="delete-btn">go back</a>
    </form>
 
 </div>
 
 </body>
 </html>
+

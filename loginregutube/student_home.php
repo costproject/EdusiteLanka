@@ -106,7 +106,7 @@ if(isset($_GET['logout'])){
         </td>
         <td class="spacer2"></td>
             <td class="spacer3"><a href="update_profile.php" class="btn">PROFILE</a></td>
-                <td class="spacer4"><a href="home.php?logout=<?php echo $user_id; ?>" class="delete-btn">LOGOUT</a></td>
+                <td class="spacer4"><a href="index.php?logout=<?php echo $user_id; ?>" class="delete-btn">LOGOUT</a></td>
 
 
 
