@@ -1,0 +1,85 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 4, 2023, 8:59:38 PM
+    Author     : Sandun Siwantha
+*/
+
+/*Body*/
+.body{
+    background-color: white;
+    color: black;
+    font-family: Open Sans;
+}
+
+/*Profile Home*/
+.Home_Profile{
+    align-content: center;
+    background-color: #8e5ebc;
+    border-radius: 50px;
+    width: 220px;
+    height: 40px;
+    color: #ededed;
+    padding-left: 5px;
+    font-family: Open Sans;
+    font-size: 15px;
+}
+
+/*login Button*/
+.Login_But,a.aboutLink,a.teacher{
+    background-color: #50fa7b;
+    color: #4d1385;
+    font-weight: bold;
+}
+
+.Login_But:hover,a.aboutLink:hover, a.teacher:hover{
+    background-color: #8e5ebc;
+    color: white;
+}
+
+/*menu_bar*/
+.menu_bar{
+    background-color: #4d1385; /* need more dark */
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*site name*/
+.site_name{
+    color: #50fa7b;
+    font-weight: bold;
+}
+
+.Header_Section{
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+
+
+
+
+a.aboutLink,a.teacher{
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.welcome_content{
+    font-size: 15px;
+    color: lightgray;
+}

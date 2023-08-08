@@ -1,0 +1,13 @@
+when starting the first page is indexCopy.php. if u open the index,php errors will come.
+
+first run the database creation code in my sql.
+then copy the project files and payste them in www directory in local host
+
+
+
+go to profiles lec folder
+get a copy in sample page and create a namebshjbaf.php
+and add that name to databse table `teach_user_form2`  ProLink colom correct row
+
+and copy the email and payst in line 102
+then  95   171 lines need to edit using what we got mail
